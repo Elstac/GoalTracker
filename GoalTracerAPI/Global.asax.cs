@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Autofac.Integration.WebApi;
+using GoalTracerAPI.DependencyIniection;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -14,6 +12,9 @@ namespace GoalTracerAPI
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            AutofacProvider.BuildContainer(GlobalConfiguration.Configuration);
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
