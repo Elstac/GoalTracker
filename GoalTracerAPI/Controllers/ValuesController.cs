@@ -1,14 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using ApplicationCore.Entities;
+using Infrastructure.Data;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace GoalTracerAPI.Controllers
 {
     public class ValuesController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
+        private ITestRepository repo;
+
+        public ValuesController(ITestRepository repo)
         {
-            return new string[] { "value1", "value2" };
+            this.repo = repo;
+        }
+
+        // GET api/values
+        public IEnumerable<Test> Get()
+        {
+            return repo.GetAll();
         }
 
         // GET api/values/5
