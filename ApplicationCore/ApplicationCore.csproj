@@ -43,6 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\ISpecification.cs" />
+    <Compile Include="Entities\Activity.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Goal.cs" />
+    <Compile Include="Entities\MainGoal.cs" />
+    <Compile Include="Entities\Task.cs" />
     <Compile Include="Entities\Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
