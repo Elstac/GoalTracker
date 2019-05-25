@@ -2,11 +2,11 @@
 
 namespace Infrastructure.Data
 {
-    public interface ITestRepository: IRepository<Test,int>
+    public interface ITaskRepository: IRepository<Task,int>
     {
 
     }
-    class TestRepository : BaseRepository<Test, int>, ITestRepository
+    class TestRepository : BaseRepository<Task, int>, ITaskRepository
     {
         public TestRepository(ApplicationContext context, ISpecificationEvaluator specificationEvaluator) : base(context, specificationEvaluator)
         {

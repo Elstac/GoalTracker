@@ -2,7 +2,7 @@
 
 namespace ApplicationCore.Entities
 {
-    class GoalStep:Goal
+    public class GoalStep:Goal
     {
         public ICollection<Task> Tasks { get; set; }
     }

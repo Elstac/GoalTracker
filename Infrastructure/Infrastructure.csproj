@@ -69,6 +69,18 @@
     <Compile Include="Migrations\201905242116008_Init.Designer.cs">
       <DependentUpon>201905242116008_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905250918033_Init1.cs" />
+    <Compile Include="Migrations\201905250918033_Init1.Designer.cs">
+      <DependentUpon>201905250918033_Init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905250948424_DurationChange.cs" />
+    <Compile Include="Migrations\201905250948424_DurationChange.Designer.cs">
+      <DependentUpon>201905250948424_DurationChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905250958183_RenameActivity.cs" />
+    <Compile Include="Migrations\201905250958183_RenameActivity.Designer.cs">
+      <DependentUpon>201905250958183_RenameActivity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +97,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905242116008_Init.resx">
       <DependentUpon>201905242116008_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905250918033_Init1.resx">
+      <DependentUpon>201905250918033_Init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905250948424_DurationChange.resx">
+      <DependentUpon>201905250948424_DurationChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905250958183_RenameActivity.resx">
+      <DependentUpon>201905250958183_RenameActivity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
