@@ -6,9 +6,9 @@ namespace Infrastructure.Data
     {
 
     }
-    class TestRepository : BaseRepository<Task, int>, ITaskRepository
+    class TaskRepository : BaseRepository<Task, int>, ITaskRepository
     {
-        public TestRepository(ApplicationContext context, ISpecificationEvaluator specificationEvaluator) : base(context, specificationEvaluator)
+        public TaskRepository(ApplicationContext context, ISpecificationEvaluator specificationEvaluator) : base(context, specificationEvaluator)
         {
 
         }

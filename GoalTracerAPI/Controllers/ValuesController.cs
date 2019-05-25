@@ -1,6 +1,4 @@
 ﻿using ApplicationCore.Entities;
-using Infrastructure.Data;
-using System;
 using System.Collections.Generic;
 using System.Web.Http;
 
