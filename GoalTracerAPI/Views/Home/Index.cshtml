@@ -1,24 +1,37 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+﻿<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+<script src="~/Scripts/app/MyApp.js"></script>
+
+<div ng-app="myApp" ng-controller="myCtrl" class="main-app">
+    <div class="content-list">
+        <h1>
+            Main goals:
+        </h1>
+        <ul class="task-list">
+            <li ng-repeat="x in apiData" class="not-completed task-list-task" ng-class="{completed: x.Completed}">
+                <label class="checkbox-container"><input type="checkbox" class="task-checkbox" ng-disabled="!checkDepTasks(x)" ng-change="completeTask(x)" ng-model="x.Completed"/></label>
+                {{'Name: '+x.Name +' ' + 'Date: ' +x.Date}}
+                <ul>
+                    <li ng-repeat="dep in x.DependencyTasks" class="not-completed" ng-class="{completed: dep.Completed}">
+                        {{dep.Name}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
+
+    <div>
+        <button ng-click="addTask = !addTask">Add task</button>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+
+    <div class="add-window" ng-show="addTask">
+        Name: <input ng-model="toAdd.Name" class="add-window-input"/>
+        Date: <input ng-model="toAdd.Date" type="date" class="add-window-input"/>
+        <select ng-model="toAdd.DependencyId" class="add-window-select">
+            <option  ng-repeat="x in apiData" value="{{x.Id}}">
+                {{x.Id+' '+x.Name+' '+x.Date}}
+            </option>
+        </select>
+        <button class="add-window-button confirm-button" ng-click="postHttp()">Post</button>
     </div>
 </div>
