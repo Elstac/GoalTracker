@@ -104,6 +104,7 @@ input{
 }
 
 .add-window-button {
+    border: none;
     color: black;
     background-color: green;
 }
