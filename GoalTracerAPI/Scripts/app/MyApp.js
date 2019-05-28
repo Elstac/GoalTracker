@@ -1,9 +1,13 @@
 ﻿var app = angular.module('myApp', ['ngRoute']);
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-
         .when('/maingoals', {
-            templateUrl: '/Scripts/app/Views/MainGoals/Add.html'
+            templateUrl: '/Scripts/app/Views/MainGoals/Index.html',
+            controller: 'MainGoalController'
+        })
+        .when('/maingoals/add', {
+            templateUrl: '/Scripts/app/Views/MainGoals/Add.html',
+            controller: 'MainGoalController'
         })
         .when('/tasks', {
             templateUrl: '/Scripts/app/Views/Tasks/Index.html',
@@ -40,8 +44,6 @@ app.controller('myCtrl', function ($scope, $http) {
             $scope.getTasks();
             $scope.endAddingTask();
         });
-
-        $scope.getTasks();
     }
 
     $scope.endAddingTask = function () {

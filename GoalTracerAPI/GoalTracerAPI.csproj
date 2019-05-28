@@ -188,7 +188,10 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app\Controllers\MainGoalController.js" />
     <Content Include="Scripts\app\MyApp.js" />
+    <Content Include="Scripts\app\Views\MainGoals\Add.html" />
+    <Content Include="Scripts\app\Views\MainGoals\Index.html" />
     <Content Include="Scripts\app\Views\Tasks\Index.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -234,7 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\app\Views\MainGoals\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
