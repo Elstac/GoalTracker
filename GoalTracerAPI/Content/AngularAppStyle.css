@@ -1,0 +1,70 @@
+﻿body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.main-app{
+    background-color:darkslategray;
+    padding: 0px;
+    margin: 0px;
+}
+
+.task-list{
+    list-style-type: none;
+    background-color: dimgray;
+    margin: 5px;
+    padding: 5px;
+}
+
+.task-list-task {
+    margin: 5px;
+    padding: 0px;
+}
+
+.task-checkbox {
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.task-checkbox input:checked {
+    background-color: greenyellow;
+}
+
+.add-window {
+    color: white;
+    position: fixed;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgba(100, 100, 100, 0.9);
+    padding: 10px;
+}
+
+.add-window-input {
+    display:block;
+    color: black;
+}
+
+.add-window-select {
+    display: block;
+    color: black;
+    margin: 5px 0;
+}
+
+.add-window-button {
+    color: black;
+    background-color: green;
+}
+
+.not-completed {
+    background-color: indianred;
+}
+
+.completed{
+    background-color:forestgreen;
+}
