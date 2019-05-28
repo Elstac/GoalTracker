@@ -1,9 +1,11 @@
 ﻿<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
 <script src="~/Scripts/app/MyApp.js"></script>
+<script src="~/Scripts/app/Controllers/MainGoalController.js"></script>
 
 <div ng-app="myApp" class="main-app">
     <a class="navigation-button" href="#!tasks">Tasks</a>
-    <a class="navigation-button" href="#!maingoals">Add goal</a>
+    <a class="navigation-button" href="#!maingoals/add">Add goal</a>
+    <a class="navigation-button" href="#!maingoals">Goals list</a>
     <div ng-view></div>
 </div>

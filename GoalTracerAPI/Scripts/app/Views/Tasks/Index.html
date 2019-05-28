@@ -1,8 +1,8 @@
-﻿<div class="content-list">
+﻿<div >
     <h1>
         Main goals:
     </h1>
-    <ul class="task-list">
+    <ul class="content-list">
         <li ng-repeat="x in apiData" class="not-completed task-list-task" ng-class="{completed: x.Completed}">
             <label class="checkbox-container"><input type="checkbox" class="task-checkbox" ng-disabled="!checkDepTasks(x)" ng-change="completeTask(x)" ng-model="x.Completed" /></label>
             {{'Name: '+x.Name +' ' + 'Date: ' +x.Date}}
