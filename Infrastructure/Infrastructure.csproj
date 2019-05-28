@@ -63,8 +63,9 @@
     <Compile Include="Data\BaseRepository.cs" />
     <Compile Include="Data\BaseSpecification.cs" />
     <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\MainGoalRepository.cs" />
     <Compile Include="Data\SpecificationEvaluator.cs" />
-    <Compile Include="Data\TestRepository.cs" />
+    <Compile Include="Data\TaskRepository.cs" />
     <Compile Include="Migrations\201905242116008_Init.cs" />
     <Compile Include="Migrations\201905242116008_Init.Designer.cs">
       <DependentUpon>201905242116008_Init.cs</DependentUpon>
