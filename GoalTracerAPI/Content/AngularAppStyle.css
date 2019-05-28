@@ -28,11 +28,15 @@ input{
     text-decoration: none;
 }
 
-    .navigation-button:hover {
-        background-color: darkgreen;
+.navigation-button:hover {
+    background-color: darkgreen;
+    text-decoration: none;
+    color: black;
+    border-left-width: 6px;
+}
+
+    .navigation-button:active :visited {
         text-decoration: none;
-        color: black;
-        border-left-width: 6px;
     }
 
 .task-list{
