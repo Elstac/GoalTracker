@@ -6,5 +6,6 @@ namespace ApplicationCore.Entities
     {
         public string Name { get; set; }
         public DateTime Date { get; set; }
+        public string Reward { get; set; }
     }
 }

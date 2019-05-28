@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201905250958183_RenameActivity.Designer.cs">
       <DependentUpon>201905250958183_RenameActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905281940384_add-reward.cs" />
+    <Compile Include="Migrations\201905281940384_add-reward.Designer.cs">
+      <DependentUpon>201905281940384_add-reward.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905250958183_RenameActivity.resx">
       <DependentUpon>201905250958183_RenameActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905281940384_add-reward.resx">
+      <DependentUpon>201905281940384_add-reward.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
