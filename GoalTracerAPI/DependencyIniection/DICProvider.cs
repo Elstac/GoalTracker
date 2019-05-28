@@ -19,6 +19,11 @@ namespace GoalTracerAPI.DependencyIniection
             var assembly = Assembly.GetExecutingAssembly();
             builder.RegisterApiControllers(assembly);
 
+            builder.RegisterAssemblyTypes(assembly)
+                    .AsImplementedInterfaces()
+                    .AsSelf()
+                    .InstancePerRequest();
+
             foreach (var asm in GetAssemblies())
                 builder.RegisterAssemblyTypes(asm)
                     .AsImplementedInterfaces()
