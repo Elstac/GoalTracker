@@ -1,6 +1,14 @@
 ﻿body {
     padding: 0px;
     margin: 0px;
+    color: #bfbfbf;
+}
+
+input{
+    background: transparent;
+    border:solid;
+    border-width:1px;
+    border-color: lightgrey;
 }
 
 .main-app{
@@ -20,16 +28,37 @@
     text-decoration: none;
 }
 
-    .navigation-button:hover {
-        background-color: darkgreen;
+.navigation-button:hover {
+    background-color: darkgreen;
+    text-decoration: none;
+    color: black;
+    border-left-width: 6px;
+}
+
+    .navigation-button:active :visited {
         text-decoration: none;
-        color: black;
-        border-left-width: 6px;
     }
 
-.task-list{
+.goal-list-item {
+    margin: 0px;
+    padding: 0px;
+    border-bottom: solid;
+    border-bottom-color: #bfbfbf;
+    border-bottom-width: 1px;
+}
+
+.goal-list-item-p {
+    margin: 0px;
+    padding: 5px;
+}
+
+.goal-list-item :hover{
+    background-color:grey;
+}
+
+.content-list {
     list-style-type: none;
-    background-color: dimgray;
+    background-color: #404040;
     margin: 5px;
     padding: 5px;
 }
@@ -75,6 +104,7 @@
 }
 
 .add-window-button {
+    border: none;
     color: black;
     background-color: green;
 }
