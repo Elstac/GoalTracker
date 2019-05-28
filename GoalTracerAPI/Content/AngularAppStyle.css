@@ -1,6 +1,14 @@
 ﻿body {
     padding: 0px;
     margin: 0px;
+    color: #bfbfbf;
+}
+
+input{
+    background: transparent;
+    border:solid;
+    border-width:1px;
+    border-color: lightgrey;
 }
 
 .main-app{
