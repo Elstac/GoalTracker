@@ -15,9 +15,9 @@ namespace GoalTracerAPI.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<MainGoal> Get()
         {
-            return new string[] { "value1", "value2" };
+            return mainGoalRepository.GetAll();
         }
 
         // GET api/<controller>/5
@@ -30,7 +30,7 @@ namespace GoalTracerAPI.Controllers
         public IHttpActionResult Post([FromBody]MainGoal mainGoal)
         {
             mainGoalRepository.Add(mainGoal);
-
+            
             return Ok();
         }
 
@@ -44,5 +44,4 @@ namespace GoalTracerAPI.Controllers
         {
         }
     }
-
 }
