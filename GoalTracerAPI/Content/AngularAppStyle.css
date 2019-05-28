@@ -39,9 +39,26 @@ input{
         text-decoration: none;
     }
 
-.task-list{
+.goal-list-item {
+    margin: 0px;
+    padding: 0px;
+    border-bottom: solid;
+    border-bottom-color: #bfbfbf;
+    border-bottom-width: 1px;
+}
+
+.goal-list-item-p {
+    margin: 0px;
+    padding: 5px;
+}
+
+.goal-list-item :hover{
+    background-color:grey;
+}
+
+.content-list {
     list-style-type: none;
-    background-color: dimgray;
+    background-color: #404040;
     margin: 5px;
     padding: 5px;
 }
