@@ -9,6 +9,24 @@
     margin: 0px;
 }
 
+.navigation-button {
+    margin: 3px;
+    border-left: solid;
+    border-left-color: lawngreen;
+    border-left-width: 3px;
+    padding: 2px;
+    background-color: forestgreen;
+    color: black;
+    text-decoration: none;
+}
+
+    .navigation-button:hover {
+        background-color: darkgreen;
+        text-decoration: none;
+        color: black;
+        border-left-width: 6px;
+    }
+
 .task-list{
     list-style-type: none;
     background-color: dimgray;

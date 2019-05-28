@@ -2,36 +2,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
 <script src="~/Scripts/app/MyApp.js"></script>
 
-<div ng-app="myApp" ng-controller="myCtrl" class="main-app">
-    <div class="content-list">
-        <h1>
-            Main goals:
-        </h1>
-        <ul class="task-list">
-            <li ng-repeat="x in apiData" class="not-completed task-list-task" ng-class="{completed: x.Completed}">
-                <label class="checkbox-container"><input type="checkbox" class="task-checkbox" ng-disabled="!checkDepTasks(x)" ng-change="completeTask(x)" ng-model="x.Completed"/></label>
-                {{'Name: '+x.Name +' ' + 'Date: ' +x.Date}}
-                <ul>
-                    <li ng-repeat="dep in x.DependencyTasks" class="not-completed" ng-class="{completed: dep.Completed}">
-                        {{dep.Name}}
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <div>
-        <button ng-click="addTask = !addTask">Add task</button>
-    </div>
-
-    <div class="add-window" ng-show="addTask">
-        Name: <input ng-model="toAdd.Name" class="add-window-input"/>
-        Date: <input ng-model="toAdd.Date" type="date" class="add-window-input"/>
-        <select ng-model="toAdd.DependencyId" class="add-window-select">
-            <option  ng-repeat="x in apiData" value="{{x.Id}}">
-                {{x.Id+' '+x.Name+' '+x.Date}}
-            </option>
-        </select>
-        <button class="add-window-button confirm-button" ng-click="postHttp()">Post</button>
-    </div>
+<div ng-app="myApp" class="main-app">
+    <a class="navigation-button" href="#!tasks">Tasks</a>
+    <a class="navigation-button" href="#!maingoals">Add goal</a>
+    <div ng-view></div>
 </div>

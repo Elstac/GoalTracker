@@ -1,4 +1,18 @@
-﻿var app = angular.module('myApp', []);
+﻿var app = angular.module('myApp', ['ngRoute']);
+app.config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+
+        .when('/maingoals', {
+            templateUrl: '/Scripts/app/Views/MainGoals/Add.html'
+        })
+        .when('/tasks', {
+            templateUrl: '/Scripts/app/Views/Tasks/Index.html',
+            controller: 'myCtrl'
+        })
+        .otherwise({
+            redirectTo: '/tasks'
+        });
+}]);
 
 app.controller('myCtrl', function ($scope, $http) {
     $scope.postDependecies = new Array();
