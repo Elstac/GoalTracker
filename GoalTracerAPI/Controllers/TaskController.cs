@@ -4,9 +4,11 @@ using Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace GoalTracerAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TaskController : ApiController
     {
         private ITaskRepository taskRepository;
