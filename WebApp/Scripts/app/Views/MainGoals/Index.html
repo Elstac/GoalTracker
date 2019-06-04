@@ -3,6 +3,11 @@
     <ul class="content-list">
         <li class="goal-list-item" ng-repeat="goal in mainGoals">
             <p class="goal-list-item-p">{{goal.Name + ' ' + goal.Date + ' ' + goal.Reward}}</p>
+            <ul ng-hide="goal.Targets == null">
+                <li ng-repeat="target in goal.Targets">
+                    Name: {{target.Name}} Value: {{target.Value}}
+                </li>
+            </ul>
         </li>
     </ul>
 </div>

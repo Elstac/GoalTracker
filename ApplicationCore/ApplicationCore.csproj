@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\ISpecification.cs" />
+    <Compile Include="Entities\Target.cs" />
     <Compile Include="Entities\TaskActivity.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Goal.cs" />

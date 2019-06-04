@@ -1,9 +1,43 @@
 ﻿<div>
     <h1>Add new goal</h1>
     <div class="content-list">
-        <p>Name: <input class="input" ng-model="Name" /></p>
-        <p>Date: <input class="input" ng-model="Date" type="date" /></p>
-        <p>Reward: <input class="input" ng-model="Reward" /></p>
-        <button class="add-window-button" ng-click="postGoal()">Submit goal</button>
+        <h2>{{'Step '+(step+1)+':'}}</h2>
+        <div ng-switch="step">
+            <div ng-switch-when = "0">
+                <p>Name: <input class="input" ng-model="$parent.toAdd.Name" /></p>
+                <p>Date: <input  class="input" type="date" ng-model="$parent.toAdd.Date" /></p>
+                <p>Reward: <input class="input" ng-model="$parent.toAdd.Reward" /></p>
+                <div class="add-list">
+                    Name: <input id="target-name" class="input" ng-model="target.name"/>
+                    Numerical value: <input id="target-value" class="input" type="number" ng-model="target.value"/>
+                    <button class="add-list-button" ng-click="addTarget(target)">Add target</button>
+                    <table class="add-list-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="target in $parent.toAdd.Targets">
+                                <td class="add-list-table-name">{{target.name}}</td>
+                                <td>{{target.value}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div ng-switch-when = "1">
+                <ul>
+                    <li ng-repeat="step in $parent.toAdd.Steps">
+                        <h3>Step {{step.name}} date {{step.date}}</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <button class="add-window-button" ng-click="setStep(step-1)" ng-class="{'vis-hidden': step==0}">Back</button>
+            <button class="add-window-button" ng-click="setStep(step+1)" ng-class="{'vis-hidden': step==3}">Next</button>
+        </div>
     </div>
 </div>

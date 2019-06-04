@@ -4,11 +4,18 @@
     color: #bfbfbf;
 }
 
+ul{
+    margin: 5px;
+    padding: 5px;
+    list-style-type:none;
+}
+
 input{
     background: transparent;
     border:solid;
     border-width:1px;
     border-color: lightgrey;
+    color: inherit;
 }
 
 .main-app{
@@ -57,10 +64,7 @@ input{
 }
 
 .content-list {
-    list-style-type: none;
     background-color: #404040;
-    margin: 5px;
-    padding: 5px;
 }
 
 .task-list-task {
@@ -115,4 +119,21 @@ input{
 
 .completed{
     background-color:forestgreen;
+}
+
+.add-list{
+    background-color:grey;
+    color: white;
+}
+
+.add-list-table{
+    width: 100%;
+    text-align: center;
+    table-layout: fixed;
+}
+.add-list-table-name{
+}
+
+.vis-hidden{
+    visibility: hidden;
 }

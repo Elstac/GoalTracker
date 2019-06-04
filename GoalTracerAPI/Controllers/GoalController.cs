@@ -19,7 +19,8 @@ namespace GoalTracerAPI.Controllers
         // GET api/<controller>
         public IEnumerable<MainGoal> Get()
         {
-            return mainGoalRepository.GetAll();
+            var goals = mainGoalRepository.GetAllGoalsWithDependencies();
+            return goals;
         }
 
         // GET api/<controller>/5
