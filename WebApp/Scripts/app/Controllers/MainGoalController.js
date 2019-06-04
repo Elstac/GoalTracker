@@ -1,5 +1,6 @@
 ﻿app.controller('MainGoalController', ['goalCreatorService','$scope','$http',function (goalCreatorService,$scope, $http) {
     $scope.step = 0;
+    $scope.addCp = true;
 
     $http({
         method: "GET",

@@ -35,7 +35,13 @@
                 </ul>
             </div>
             <div ng-switch-when = "2">
-                <button type="button" class="goal-tree-add-button">Add CP</button>
+                <div class="dropdown">
+                    <button type="button" class="goal-tree-add-button" ng-click="addCp = !addCp">Add CP</button>
+                    <div class="dropdown-content" ng-show="addCp">
+                        <p>Name: <input class="input" ng-model="newCp.name"/></p>
+                        <p>Date: <input class="input" ng-model="newCp.date"/></p>
+                    </div>
+                </div>
                 <button ng-repeat="step in $parent.toAdd.Steps" class="goal-tree-step-button" type="button">Name: {{step.name}} Date: {{step.date}}</button>
             </div>
         </div>
