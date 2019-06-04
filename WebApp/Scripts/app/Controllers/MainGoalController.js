@@ -26,4 +26,15 @@
         goalCreatorService.changeStep(step,$scope.toAdd);
         $scope.step = step;
     }
+
+    $scope.changeTree = function(index){
+        $scope.stepTree = $scope.toAdd.Steps[index];
+    }
+
+    $scope.addCpToTree = function(newCp){
+        if($scope.stepTree.tasks==null)
+            $scope.stepTree.tasks = [];
+            
+        $scope.stepTree.tasks.push(newCp);
+    }
 }]);

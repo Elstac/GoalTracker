@@ -39,11 +39,14 @@
                     <button type="button" class="goal-tree-add-button" ng-click="addCp = !addCp">Add CP</button>
                     <div class="dropdown-content" ng-show="addCp">
                         Name: <input class="input" ng-model="newCp.name"/>
-                        Date: <input class="input" ng-model="newCp.date"/>
-                        <button class="goal-tree-confirm-button" ng-click="">Add</button>
+                        Date: <input class="input" type="month" ng-model="newCp.date"/>
+                        <button class="goal-tree-confirm-button" ng-click="addCpToTree(newCp)">Add</button>
                     </div>
                 </div>
-                <button ng-repeat="step in $parent.toAdd.Steps" class="goal-tree-step-button" type="button">Name: {{step.name}} Date: {{step.date}}</button>
+                <button ng-repeat="step in $parent.toAdd.Steps" ng-click="changeTree($index)" class="goal-tree-step-button" type="button">Name: {{step.name}} Date: {{step.date}}</button>
+                <div class="goal-tree-canvas">
+                    <p ng-repeat="task in $parent.stepTree.tasks">{{task.name}}</p>
+                </div>
             </div>
         </div>
         <div>
