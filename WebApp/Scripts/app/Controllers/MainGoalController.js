@@ -1,4 +1,6 @@
-﻿app.controller('MainGoalController', function ($scope, $http) {
+﻿app.controller('MainGoalController', ['goalCreatorService','$scope','$http',function (goalCreatorService,$scope, $http) {
+    $scope.step = 0;
+
     $http({
         method: "GET",
         url: "http://localhost:25965/api/goal"
@@ -8,13 +10,19 @@
         $scope.apiData = response.statusText;
     });
 
-    $scope.postGoal = function () {
-        $http({
-            method: "POST",
-            url: "http://localhost:25965/api/goal",
-            data: { name: $scope.Name, date: $scope.Date, reward: $scope.Reward }
-        }).then(function mySuccess(response) {
-            alert("Goal created");
-        });
+    $scope.toAdd ={};
+    
+    $scope.addTarget = function(target){
+        if($scope.toAdd.Targets == null)
+            $scope.toAdd.Targets = new Array();
+        
+        $scope.toAdd.Targets.push({name:target.name, value:target.value});
+        document.getElementById('target-name').value = '';
+        document.getElementById('target-value').value = null;
     }
-});
+
+    $scope.setStep = function(step){
+        goalCreatorService.changeStep(step,$scope.toAdd);
+        $scope.step = step;
+    }
+}]);
