@@ -137,3 +137,22 @@ input{
 .vis-hidden{
     visibility: hidden;
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+ }
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    min-width: 160px;
+    background-color: #cccccc;
+    color: #404040;
+    padding: 5px;
+}
+
+.dropdown-content > input{
+    border-color: #404040;
+}
