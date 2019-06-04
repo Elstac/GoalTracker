@@ -36,5 +36,8 @@
             $scope.stepTree.tasks = [];
 
         $scope.stepTree.tasks.push({name:newCp.name,date: newCp.date});
+        newCp.name = null;
+        newCp.data = null;
+        $scope.newCp = false;
     }
 }]);
