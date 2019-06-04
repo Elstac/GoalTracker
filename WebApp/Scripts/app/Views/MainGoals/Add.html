@@ -35,7 +35,8 @@
                 </ul>
             </div>
             <div ng-switch-when = "2">
-                <button ng-repeat="step in $parent.toAdd.Steps">Name: {{step.name}} Date: {{step.date}}</button>
+                <button type="button" class="goal-tree-add-button">Add CP</button>
+                <button ng-repeat="step in $parent.toAdd.Steps" class="goal-tree-step-button" type="button">Name: {{step.name}} Date: {{step.date}}</button>
             </div>
         </div>
         <div>
