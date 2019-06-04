@@ -34,6 +34,9 @@
                     </li>
                 </ul>
             </div>
+            <div ng-switch-when = "2">
+                <button ng-repeat="step in $parent.toAdd.Steps">Name: {{step.name}} Date: {{step.date}}</button>
+            </div>
         </div>
         <div>
             <button class="add-window-button" ng-click="setStep(step-1)" ng-class="{'vis-hidden': step==0}">Back</button>
