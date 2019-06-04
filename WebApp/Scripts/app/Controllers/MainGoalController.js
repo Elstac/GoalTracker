@@ -34,7 +34,7 @@
     $scope.addCpToTree = function(newCp){
         if($scope.stepTree.tasks==null)
             $scope.stepTree.tasks = [];
-            
-        $scope.stepTree.tasks.push(newCp);
+
+        $scope.stepTree.tasks.push({name:newCp.name,date: newCp.date});
     }
 }]);
