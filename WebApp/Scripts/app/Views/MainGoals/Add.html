@@ -44,8 +44,8 @@
                     </div>
                 </div>
                 <button ng-repeat="step in $parent.toAdd.Steps" ng-click="changeTree($index)" class="goal-tree-step-button" type="button">Name: {{step.name}} Date: {{step.date}}</button>
-                <div class="goal-tree-canvas">
-                    <p ng-repeat="task in $parent.stepTree.tasks">{{task.name}}</p>
+                <button ng-click="drawGraph()">Show graph</button>
+                <div id="container" class="goal-tree-canvas" drawGraph>
                 </div>
             </div>
         </div>
