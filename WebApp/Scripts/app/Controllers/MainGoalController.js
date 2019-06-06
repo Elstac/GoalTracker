@@ -1,4 +1,4 @@
-﻿app.controller('MainGoalController', ['goalCreatorService','$scope','$http',function (goalCreatorService,$scope, $http) {
+﻿app.controller('MainGoalController', ['drawGraphService','goalCreatorService','$scope','$http',function (graphDrawer,goalCreatorService,$scope, $http) {
     $scope.step = 0;
     $scope.addCp = true;
 
@@ -36,8 +36,36 @@
             $scope.stepTree.tasks = [];
 
         $scope.stepTree.tasks.push({name:newCp.name,date: newCp.date});
+
+        $scope.stepTree.tasks.sort(function(task1,task2){
+            return task1.date>task2.date?1:-1;
+        });
+
         newCp.name = null;
         newCp.data = null;
         $scope.newCp = false;
+        $scope.drawGraph();
+    }
+
+    $scope.drawGraph = function(){
+        var nodes = [];
+        
+
+        if( $scope.stepTree.tasks == undefined){
+            nodes.push(['Now','Step end']);
+        }
+        else{
+            var tasks = $scope.stepTree.tasks;
+            for(var i = 0;i<tasks.length;i++)
+            {
+                if(i == 0)
+                    nodes.push(['Now',tasks[i].name]);
+                else
+                    nodes.push([tasks[i-1].name,tasks[i].name]);
+            }
+            nodes.push([tasks[tasks.length-1].name,'Step end']);
+        }
+
+        graphDrawer.drawGraph(nodes);
     }
 }]);
